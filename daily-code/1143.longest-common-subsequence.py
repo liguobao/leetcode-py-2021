@@ -7,7 +7,9 @@ class Solution(object):
         """
         # dp[i][j] = text1[0:i] 和 text2[0:j]的最长子序列长度
         # text1[i-1] == text2[j-1], 则可见 dp[i][j] = dp[i-1][j-1] + 1
-        # text1[i-1] != text2[j-1], 则两种情况： text1[0:i-1] + text2[0:j] 或者 text1[0:i] + text2[0:j-1]
+        # text1[i-1] != text2[j-1], 
+        # 则两种情况： text1[0:i-1] + text2[0:j]  -> dp[i-1][j]
+        # 或者 text1[0:i] + text2[0:j-1] -> dp[i][j-1]
         n, m = len(text1), len(text2)
         dp = [[0] * (m+1) for _ in range(0, n+1)]
         for i in range(1, n+1):
