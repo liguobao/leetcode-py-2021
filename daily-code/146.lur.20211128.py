@@ -37,6 +37,7 @@ class LRUCache:
             current_first_node.prev = self.head
         current_node =ListNode(key, value)
         self.hashmap[key] = current_node
+        
         last_node = self.tail.prev
         last_node.next = current_node
         current_node.prev = last_node
