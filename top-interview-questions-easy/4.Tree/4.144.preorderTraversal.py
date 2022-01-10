@@ -10,7 +10,7 @@ from b_tree import BinaryTree
 
 class Solution(object):
     def __init__(self):
-        self. queue_node = []
+        self.queue_node = []
 
     # 前序遍历， 中 -> 左 -> 右
     def preorderTraversal(self, root):
