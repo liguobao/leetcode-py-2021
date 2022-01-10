@@ -4,7 +4,7 @@
 # 高度平衡 二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过 1 」的二叉树。
 
 # 作者：力扣(LeetCode)
-# 链接：https: // leetcode-cn.com/leetbook/read/top-interview-questions-easy/xninbt/
+# 链接：https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/
 # 来源：力扣（LeetCode）
 # 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
