@@ -24,8 +24,11 @@ class Solution(object):
         long_count = 0
         s_count = len(s)
         for i in range(s_count-1):
+            # ？？？
             for j in range(i + long_count, s_count):
+                # ？？？
                 new_text = s[i:j+1]
+                # ??? 需要解释
                 if check_nice(new_text) and j-i > long_count:
                     long_count = j - i
                     ans = new_text
