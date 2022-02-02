@@ -10,6 +10,7 @@ class Solution(object):
         ch_index = word.index(ch)
         sub_text = word[0:ch_index+1]
         rev_text = sub_text[::-1]
+        # rev_text = "".join(reversed(sub_text))
         remove_text = word.replace(sub_text, rev_text)
         return remove_text
 
