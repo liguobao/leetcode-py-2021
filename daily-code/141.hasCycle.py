@@ -1,11 +1,8 @@
 # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-from link_node import arrayToLinkNode, ListNode
-
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
 class Solution(object):
     def hasCycle(self, head):
@@ -15,19 +12,14 @@ class Solution(object):
         """
         if not head:
             return False
-        # 快慢两个节点
-        # 慢节点一次走一步
-        # 快节点一次走两步
-        # 如果快慢都走到一起，说明有环了
-        slow_node: ListNode = head
-        fast_node: ListNode = head.next
+        slow_node = head
+        fast_node = head.next
         while fast_node and fast_node.next:
             slow_node = slow_node.next
             fast_node = fast_node.next.next
             if slow_node == fast_node:
                 return True
         return False
-
 
 test1 = ListNode(0)
 node1 = ListNode(1)
@@ -39,5 +31,5 @@ node2.next = node3
 node3.next = test1
 
 
-result = Solution().has_cycle(test1)
+result = Solution().hasCycle(test1)
 print(f"result:{result}")
