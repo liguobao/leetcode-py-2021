@@ -1,0 +1,83 @@
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+class Solution(object):
+
+    def deleteDuplicates(self, head: ListNode):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if not head:
+            return head
+        current_node: ListNode = head
+        node_val = set()
+        dup_val = set()
+        while current_node:
+            if current_node.val in node_val:
+                dup_val.add(current_node.val)
+            else:
+                node_val.add(current_node.val)
+            current_node = current_node.next
+        pre_node = head
+        current_node = head
+        while current_node:
+            if current_node.val in dup_val:
+                if current_node == head:
+                    head = current_node.next
+                    pre_node = current_node.next
+                else:
+                    pre_node.next = current_node.next
+                current_node = current_node.next
+                continue
+            pre_node = current_node
+            current_node = current_node.next
+        return head
+
+
+# root_head = ListNode(1)
+# node_2 = ListNode(2)
+# node_3_1 = ListNode(3)
+# node_3_2 = ListNode(3)
+# node_4_1 = ListNode(4)
+# node_4_2 = ListNode(4)
+# node_5 = ListNode(5)
+# root_head.next = node_2
+# node_2.next = node_3_1
+# node_3_1.next = node_3_2
+# node_3_2.next = node_4_1
+# node_4_1.next = node_4_2
+# node_4_2.next = node_5
+# result = Solution().deleteDuplicates(root_head)
+# print(result)
+
+# root_head = ListNode(1)
+# node_2 = ListNode(1)
+# node_3_1 = ListNode(1)
+# node_3_2 = ListNode(2)
+# node_4_1 = ListNode(3)
+# node_4_2 = ListNode(4)
+# node_5 = ListNode(5)
+# root_head.next = node_2
+# node_2.next = node_3_1
+# node_3_1.next = node_3_2
+# node_3_2.next = node_4_1
+# node_4_1.next = node_4_2
+# node_4_2.next = node_5
+# result = Solution().deleteDuplicates(root_head)
+# print(result)
+
+
+root_head = ListNode(1)
+node_2 = ListNode(1)
+node_3_1 = ListNode(1)
+node_3_2 = ListNode(2)
+node_4_1 = ListNode(3)
+node_4_2 = ListNode(4)
+node_5 = ListNode(5)
+root_head.next = node_2
+result = Solution().deleteDuplicates(root_head)
+print(result)
