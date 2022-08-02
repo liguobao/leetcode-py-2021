@@ -6,6 +6,21 @@ class ListNode(object):
 
 class Solution(object):
 
+    def deleteDuplicatesV2(self, head: ListNode):
+        if not head:
+            return head
+        dummy_node = ListNode(0, head)
+        cur_node = dummy_node.next
+        # 当前节点和下一级节点都存在
+        while cur_node.next and cur_node.next.next:
+            if cur_node.next.val == cur_node.next.next.val:
+                cur_val = cur_node.val
+                while cur_node.next and cur_node.next.val == cur_val:
+                    cur_node.next = cur_node.next.next
+            else:
+                cur_node = cur_node.next
+        return dummy_node.next
+
     def deleteDuplicates(self, head: ListNode):
         """
         :type head: ListNode
