@@ -10,11 +10,14 @@ class Solution(object):
         if not head:
             return head
         dummy_node = ListNode(0, head)
-        cur_node = dummy_node.next
+        cur_node = dummy_node
         # 当前节点和下一级节点都存在
+        # 当前节点 +下一级 或者为None，说明是单节点或者是最后一个节点，这种情况下可以终止了
         while cur_node.next and cur_node.next.next:
+            # 发现了重复元素
             if cur_node.next.val == cur_node.next.next.val:
                 cur_val = cur_node.val
+                # 不断当前节点的Next赋值给下一个（等同于移除）
                 while cur_node.next and cur_node.next.val == cur_val:
                     cur_node.next = cur_node.next.next
             else:
