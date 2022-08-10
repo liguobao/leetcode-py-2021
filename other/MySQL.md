@@ -205,3 +205,9 @@ For index records the search encounters, locks the rows and any associated index
 ## 结束语
 
 全文基本引用于:[深入理解 MySQL 中的事务【超详细配图版】](https://juejin.cn/post/6945713828470620191)
+
+
+### 扩展阅读
+- [【享学MySQL】系列：MySQL中的锁机制](https://juejin.cn/post/6944573028156063751)
+- [深入理解 MySQL 的 MVCC 机制](https://cloud.tencent.com/developer/article/1876227)
+- [MySQL深度分页的问题及优化方案：千万级数据量如何快速分页](https://juejin.cn/post/6945392074988617764)
