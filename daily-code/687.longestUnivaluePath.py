@@ -16,9 +16,13 @@ class Solution(object):
             return 0
         left_edge = self.max_path_edge(root.left)
         right_edge = self.max_path_edge(root.right)
+        # 左边节点等于根节点
         left1 = left_edge + 1 if root.left and root.left.val == root.val else 0
+        # 右边节点等于根节点
         right1 = right_edge + 1 if root.right and root.right.val == root.val else 0 
+        # 当前最大值
         self.max_edge_count = max(self.max_edge_count, left1 + right1)
+        # 左边右边选一个
         return max(left1, right1)
 
     def longestUnivaluePath(self, root):
