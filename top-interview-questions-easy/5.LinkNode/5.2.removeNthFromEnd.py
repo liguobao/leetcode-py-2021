@@ -1,4 +1,4 @@
-# https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn2925/
+# https://leetcode.cn/problems/remove-nth-node-from-end-of-list/solution/
 
 from link_node import arrayToLinkNode
 
@@ -30,7 +30,7 @@ class Solution(object):
             head_index = head_index + 1
             if head_index == remove_index:
                 if current_node.next is not None:
-                   current_node.next = current_node.next.next
+                    current_node.next = current_node.next.next
                 else:
                     current_node.next = None
                 break

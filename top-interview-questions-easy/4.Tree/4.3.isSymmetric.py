@@ -21,18 +21,18 @@ class Solution(object):
         if root is None:
             return True
         stack_node = [root]
-        queue_val = []
-        while(stack_node):
+        while (stack_node):
             stack_len = len(stack_node)
-            current_val = []
+            # 当前这一层的所有元素
+            current_nodes = []
             while stack_len > 0:
                 current_node = stack_node[0]
                 stack_node.remove(current_node)
                 if current_node is None:
-                    current_val.append(None)
+                    current_nodes.append(None)
                     stack_len = stack_len - 1
                     continue
-                current_val.append(current_node.val)
+                current_nodes.append(current_node.val)
                 if current_node.left:
                     stack_node.append(current_node.left)
                 else:
@@ -42,8 +42,8 @@ class Solution(object):
                 else:
                     stack_node.append(None)
                 stack_len = stack_len - 1
-            print(current_val)
-            if self.array_isSymmetric(current_val) is False:
+            print(current_nodes)
+            if self.array_isSymmetric(current_nodes) is False:
                 return False
         return True
 
