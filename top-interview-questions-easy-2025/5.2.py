@@ -60,7 +60,14 @@ class Solution(object):
         while current_node:
             head_index = head_index +1
             if head_index == remove_index:
-                pass
+                if current_node.next is not None:
+                    current_node.next = current_node.next.next
+                else:
+                    current_node.next = None
+                break
+            current_node = current_node.next
+        return head
+                
         
         
         
