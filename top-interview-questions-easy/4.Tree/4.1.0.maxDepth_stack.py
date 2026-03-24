@@ -14,7 +14,6 @@ class Solution(object):
         :type root: T()reeNode
         :rtype: int
         """
-        height = 0
         if root is None:
             return 0
         stack_node = []
